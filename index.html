@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>University Review System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background-color: #4f46e5;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    .search-bar input {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+    .card {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1.5rem;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+    }
+    .card h2 {
+      margin-top: 0;
+      color: #4f46e5;
+    }
+    .card p {
+      margin-bottom: 0.5rem;
+    }
+    .rating {
+      font-weight: bold;
+      color: #16a34a;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    .welcome-page {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 1000;
+    }
+    .welcome-page h1 {
+      font-size: 2.5rem;
+      color: #4f46e5;
+      margin-bottom: 1rem;
+    }
+    .welcome-page p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .welcome-page button {
+      background-color: #4f46e5;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+    .welcome-page button:hover {
+      background-color: #4338ca;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="welcome-page" id="welcomePage">
+    <h1>Welcome to the University Review System</h1>
+    <p>Discover and review top universities in Cabanatuan City</p>
+    <button onclick="enterSite()">Enter</button>
+  </div>
+
+  <div id="mainContent" class="hidden">
+    <header>
+      <h1>University Review System</h1>
+      <p>Enhancing College Search Experiences</p>
+    </header>
+    <div class="container">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for universities..." onkeyup="searchCards()" />
+      </div>
+
+      <div class="card" data-name="Wesleyan University Philippines">
+        <a href="WUP.html" style="text-decoration: none;">
+          <h2>Wesleyan University Philippines (WUP)</h2>
+          <p><span class="rating">Rating:</span> 4.8/5</p>
+          <p>It is one of only 68 higher education institutions in the Philippines granted autonomous status by the Commission on Higher Education.</p>
+        </a>
+      </div>
+      
+      <div class="card" data-name="College of the Immaculate Conception">
+        <a href="CIC.html" style="text-decoration: none;">
+          <h2>College of the Immaculate Conception (CIC)</h2>
+          <p><span class="rating">Rating:</span> 4.6/5</p>
+          <p>Provides a vibrant campus life, innovation opportunities, and strong industry connections.</p>
+        </a>
+      </div>
+      
+      <div class="card" data-name="Nueva Ecija University of Science and Technology">
+        <a href="https://example.com" style="text-decoration: none;">
+          <h2>Nueva Ecija University of Science and Technology (NEUST)</h2>
+          <p><span class="rating">Rating:</span> 4.9/5</p>
+          <p>One of the oldest and most prestigious universities in the Cabanatuan City, hub of academic brilliance.</p>
+        </a>
+      </div>
+      
+      <div class="card" data-name="PHINMA Araullo University">
+        <a href="https://example.com" style="text-decoration: none;">
+          <h2>PHINMA Araullo University (AU)</h2>
+          <p><span class="rating">Rating:</span> 4.7/5</p>
+          <p>PHINMA AU is one of the nine-member schools under the PHINMA Education system.</p>
+        </a>
+      </div>
+      
+      <div class="card" data-name="Good Samaritan Colleges">
+        <a href="https://example.com" style="text-decoration: none;">
+          <h2>Good Samaritan Colleges (GSC)</h2>
+          <p><span class="rating">Rating:</span> 4.7/5</p>
+          <p>Good Samaritan Colleges (GSC) in Cabanatuan City is ranked 5th out of 5 schools in Nueva Ecija, 23rd out of 23 schools in Central Luzon, and 249th out of 273 schools in the Philippines. In terms of board exam rankings, GSC's first-time passing rates for various exams range from 44% to 50%. For example, the passing rate for the Medical Technology Board Exam is 50%, ranking 94th in the Philippines.</p>
+        </a>
+      </div>
+      
+      <div class="card" data-name="Our Lady of Fatima University">
+        <a href="https://example.com" style="text-decoration: none;">
+          <h2>Our Lady of Fatima University (OLFU)</h2>
+          <p><span class="rating">Rating:</span> 4.5/5</p>
+          <p>Our Lady of Fatima University (OLFU) in Cabanatuan City, Nueva Ecija is known for its strong academic performance in pharmacy and other paramedical fields. The College of Pharmacy achieved a 83.33% passing rate on the April 2025 Pharmacist Licensure Examination.</p>
+        </a>
+      </div>
+      
+      <div class="card" data-name="College for Research and Technology">
+        <a href="https://example.com" style="text-decoration: none;">
+          <h2>College for Research and Technology (CRT)</h2>
+          <p><span class="rating">Rating:</span> 4.4/5</p>
+          <p>The College for Research and Technology (CRT) in Cabanatuan has an 80% recommendation rate based on 8 reviews on their Facebook page. Cabanatuan City is a 1st class component city in Nueva Ecija, the largest city in the province. It is also the 5th largest city in Central Luzon.</p>
+        </a>
+      </div>
+      
+    </div>
+
+    <footer>
+      &copy; 2025 University Review System. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    function enterSite() {
+      document.getElementById('welcomePage').classList.add('hidden');
+      document.getElementById('mainContent').classList.remove('hidden');
+    }
+
+    function searchCards() {
+      let query = document.getElementById('searchInput').value.toLowerCase();
+      let cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        let cardTitle = card.getAttribute('data-name').toLowerCase();
+        if (cardTitle.includes(query)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
